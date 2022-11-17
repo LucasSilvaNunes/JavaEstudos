@@ -1,7 +1,6 @@
-package model;
+package modelo;
 
 public class Conta {
-	float valor = 0;
 	int num;
 	String dono;
 	int tipo;
@@ -52,11 +51,11 @@ public class Conta {
 		this.limite = limite;
 	}
 	
-	public double getTipo() {
+	public int getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(double tipo) {
+	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
 
@@ -74,8 +73,12 @@ public class Conta {
 		System.out.println("Seu saldo é: "+saldo);
 	}
 	
-	public void Transfere(double saldo1, double saldo2, double valor) {
-		saldo1 = saldo1 - valor;
-		saldo2 = saldo2 + valor;
+	public void Transfere(Conta c2, double valor) {
+		if(valor > getLimite() || valor > c2.getLimite()) {
+			System.out.println("TRANSFERÊNCIA INVÁLIDA");
+		}else {
+			setSaldo(getSaldo()-valor);
+			c2.setSaldo(c2.getSaldo()+valor);
+		}
 	}
 }
