@@ -1,11 +1,11 @@
 package modelo;
 
 public class Conta {
-	int num;
-	String dono;
-	int tipo;
-	double saldo;
-	double limite;
+	private int num;
+	private String dono;
+	private int tipo;
+	private double saldo;
+	private double limite;
 	
 	public Conta(int num, String dono, int tipo, double saldo, double limite){
 		this.num = num;
@@ -59,26 +59,28 @@ public class Conta {
 		this.tipo = tipo;
 	}
 
-	public double Saque(double valor) {
-		saldo = saldo - valor;
-		return saldo;
+	public void Saque(double valor) {
+		if(getSaldo() < valor) {
+			System.out.println("SAQUE INVÁLIDO.");
+		}else {
+			setSaldo(getSaldo() - valor);
+		}
 	}
 	
-	public double Depositar(double valor) {
-		saldo = saldo + valor;
-		return saldo;
+	public void Depositar(double valor) {
+		setSaldo(getSaldo() + valor);
 	}
 	
-	public void MostrarSaldo(double saldo) {
+	public void MostrarSaldo() {
 		System.out.println("Seu saldo é: "+saldo);
 	}
 	
-	public void Transfere(Conta c2, double valor) {
-		if(valor > getLimite() || valor > c2.getLimite()) {
+	public void Transfere(Conta contaDestino, double valor) {
+		if(valor > getLimite()) {
 			System.out.println("TRANSFERÊNCIA INVÁLIDA");
 		}else {
-			setSaldo(getSaldo()-valor);
-			c2.setSaldo(c2.getSaldo()+valor);
+			setSaldo(getSaldo() - valor);
+			contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 		}
 	}
 }
