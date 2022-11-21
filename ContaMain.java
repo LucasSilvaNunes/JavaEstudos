@@ -22,6 +22,7 @@ public class mainConta {
 		System.out.println("Conta depois do saque: "+conta1.getSaldo());
 		
 		conta1.Transfere(conta2, 350);
+		conta1.Transfere(conta2, 5000);
 		
 		conta1.MostrarSaldo();
 		conta2.MostrarSaldo();
