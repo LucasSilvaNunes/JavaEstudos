@@ -76,11 +76,15 @@ public class Conta {
 	}
 	
 	public void Transfere(Conta contaDestino, double valor) {
-		if(valor > getLimite()) {
-			System.out.println("TRANSFERÊNCIA INVÁLIDA");
+		if(getSaldo() >= valor) {
+			if(valor > getLimite()) {
+				System.out.println("TRANSFERÊNCIA INVÁLIDA");
+			}else {
+				setSaldo(getSaldo() - valor);
+				contaDestino.setSaldo(contaDestino.getSaldo() + valor);
+			}
 		}else {
-			setSaldo(getSaldo() - valor);
-			contaDestino.setSaldo(contaDestino.getSaldo() + valor);
+			System.out.println("Saldo menor que o valor de transferência.");
 		}
 	}
 }
