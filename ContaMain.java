@@ -10,7 +10,7 @@ public class mainConta {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		Conta conta1, conta2;
-		conta1 = new Conta(123, "Carlos Augusto", 1, 8000.0, 200);
+		conta1 = new Conta(123, "Carlos Augusto", 1, 8000.0, 500);
 		conta2 = new Conta(321, "Miguel Soares", 1, 2000.0, 450);
 		
 		conta1.Depositar(1000);
@@ -21,10 +21,10 @@ public class mainConta {
 		
 		System.out.println("Conta depois do saque: "+conta1.getSaldo());
 		
-		conta1.Transfere(conta2, 200);
+		conta1.Transfere(conta2, 350);
 		
-		System.out.println("Conta1 depois da transferencia: "+conta1.getSaldo());
-		System.out.println("Conta2 depois da transferencia: "+conta2.getSaldo());
+		conta1.MostrarSaldo();
+		conta2.MostrarSaldo();
 		
 	}
 
