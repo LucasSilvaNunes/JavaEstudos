@@ -47,5 +47,11 @@ public class Paciente {
 		this.telefone = telefone;
 	}
 	
-	
+	public boolean isEqual(int code) {
+		if(getCodigo() == code) {
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
