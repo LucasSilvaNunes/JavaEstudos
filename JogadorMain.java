@@ -42,6 +42,8 @@ public class mainJogador {
 			altura = scan.nextDouble();
 			jogadores[i].setAltura(altura);
 			
+			scan.nextLine();
+			
 			// QUER PARAR? "S" >> i = 40; pra parar o for.
 			
 		}
