@@ -49,8 +49,8 @@ public class Pais {
 	}
 	
 	public double densiPop() {
-		System.out.print("A densidade demográfica do país "+getNome()+" é de: ");
-		return getPopulacao() / getDimensao();
+		System.out.print("A densidade demográfica do país "+nome+" é de: ");
+		return populacao / dimensao;
 	}
 	
 	public String toString() {
