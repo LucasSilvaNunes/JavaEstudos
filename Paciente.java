@@ -1,8 +1,8 @@
 package modelo;
 
 public class Paciente {
-	int codigo;
-	String nome, CPF, telefone;
+	private int codigo;
+	private String nome, CPF, telefone;
 	
 	public Paciente(int codigo, String nome, String CPF, String telefone) {
 		this.codigo = codigo;
@@ -53,5 +53,9 @@ public class Paciente {
 		}else{
 			return false;
 		}
+	}
+	
+	public String toString(){
+		return "\nCódigo:"+codigo+"\nNome: "+nome+"\nCPF: "+CPF+"\nTelefone: "+telefone;
 	}
 }
