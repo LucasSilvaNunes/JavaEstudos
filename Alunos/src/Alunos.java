@@ -52,8 +52,8 @@ public class Aluno {
 		return (nota1+nota2/2);
 	}
 	
-	public boolean comparaNome(Aluno aluno) {
-		if(this.nome.equals(aluno.getNome())) {
+	public boolean comparaNome(String nome) {
+		if(this.nome.equals(nome)) {
 			return true;
 		}else {
 			return false;
