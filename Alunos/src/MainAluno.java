@@ -1,22 +1,19 @@
-package principal;
+package main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import modelo.Aluno;
+import model.Aluno;
 
 public class MainAluno {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int check, i=0;
+		int check;
 		double soma=0;
 		String nome;
 		Scanner scan = new Scanner(System.in);
 		ArrayList <Aluno> alunosLista = new ArrayList <Aluno>();
-		
-		Aluno[] alunos;
-		alunos = new Aluno[500];
 		
 		System.out.println("\n1- Cadastrar um aluno;"
 				+ "\n2- Buscar um aluno pelo nome;"
@@ -28,20 +25,20 @@ public class MainAluno {
 		while(check > 0 && check < 5) {
 			
 			if(check == 1) {
-				alunos[i] = new Aluno();
+				Aluno aluno = new Aluno();
 				
 				System.out.println("Digite a matrícula do Aluno: ");
-				alunos[i].setMatricula(scan.nextLong());
+				aluno.setMatricula(scan.nextLong());
 				scan.nextLine();
 				System.out.println("Digite o nome do Aluno: ");
-				alunos[i].setNome(scan.nextLine());
+				aluno.setNome(scan.nextLine());
 				System.out.println("Digite a primeira nota do Aluno: ");
-				alunos[i].setNota1(scan.nextDouble());
+				aluno.setNota1(scan.nextDouble());
 				System.out.println("Digite a segunda nota do Aluno: ");
-				alunos[i].setNota2(scan.nextDouble());
+				aluno.setNota2(scan.nextDouble());
+				aluno.setMedia();
 				
-				alunosLista.add(alunos[i]);
-				i++;
+				alunosLista.add(aluno);
 				
 				System.out.println("\n1- Cadastrar um aluno;"
 						+ "\n2- Buscar um aluno pelo nome;"
@@ -54,9 +51,9 @@ public class MainAluno {
 				scan.nextLine();
 				System.out.println("Digite o nome que queira procurar: ");
 				nome = scan.nextLine();
-				for(int j=0; j<alunosLista.size(); j++) {
-					if(alunos[j].comparaNome(nome)) {
-						System.out.println(alunos[j].toString());
+				for(int i=0; i<alunosLista.size(); i++) {
+					if(alunosLista.get(i).comparaNome(nome)) {
+						System.out.println(alunosLista.get(i).toString());
 					}
 				}
 				System.out.println("Aluno não consta no sistema!");
@@ -68,8 +65,8 @@ public class MainAluno {
 				check = scan.nextInt();
 				
 			}else if(check == 3) {
-				for(int j=0; j<alunosLista.size(); j++) {
-					System.out.println(alunosLista.get(j).toString());
+				for(int i=0; i<alunosLista.size(); i++) {
+					System.out.println(alunosLista.get(i).toString());
 				}
 				System.out.println("\n1- Cadastrar um aluno;"
 						+ "\n2- Buscar um aluno pelo nome;"
@@ -79,8 +76,8 @@ public class MainAluno {
 				check = scan.nextInt();
 				
 			}else if(check == 4) {
-				for(int j=0; j<alunosLista.size(); j++) {
-					soma = soma + alunos[j].calcMedia();
+				for(int i=0; i<alunosLista.size(); i++) {
+					soma = soma + alunosLista.get(i).getMedia();
 				}
 				System.out.println("A média da turma é: "+(soma/alunosLista.size()));
 				System.out.println("\n1- Cadastrar um aluno;"
