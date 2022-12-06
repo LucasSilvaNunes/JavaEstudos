@@ -68,3 +68,33 @@ public class DemoEmpresa {
 	}
 
 }
+
+
+/*Considere um sistema para gerenciamento de empresas de uma região. 
+Toda empresa tem nome, CNPJ, endereço, cidade, estado, telefone e a 
+quantidade de funcionários. Para uma dada empresa, deve ser possível 
+inserir e obter seus dados. Você deve projetar e implementar uma 
+classe Empresa, definindo os atributos e os métodos que atendam às 
+solicitações acima, e outra classe DemoEmpresa definindo um array de 
+empresas com o limite de 50 posições para cadastramento de 
+empresas. Nesse contexto, você deve:
+
+a) Criar seu projeto utilizando a estrutura de pacotes para organizar 
+as classes modelo e classes de execução (principal);
+b) Definir a classe Empresa e seus atributos com modificadores de 
+acesso;
+c) Gerar os métodos necessários de acesso aos atributos;
+d) Criar um método de exibição/impressão para os dados da classe;
+e) Implementar um método que recebe uma string e compara com o 
+nome da empresa, retornando o resultado da comparação;
+f) Definir um método que recebe um valor inteiro e retorna como 
+resultado o maior valor ao compará-lo com a quantidade de 
+funcionários;
+g) Definir a classe DemoEmpresa e um array de empresas com o 
+limite de 50 posições;
+h) Permitir que o usuário efetue o cadastro das empresas enquanto 
+ele desejar ou até que atinja o limite de empresas;
+i) Ao final, as seguintes impressões devem ser feitas:
+i. Os dados de cada empresa;
+ii. O(s) nome(s) da(s) empresa(s) que possui(em) o maior 
+número de funcionários vinculados.*/
