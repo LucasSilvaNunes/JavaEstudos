@@ -14,10 +14,11 @@ public class ImovelNovo extends Imovel{
   }
 
   public double calcularValorFinal(){
-    return(taxaAdd*super.getPreco());
+    return(taxaAdd+super.getPreco());
   }
+  
   public String toString(){
-    return (super.toString()+"\nValor final: "+calcularValorFinal()+"\nAno de construção: "+estado);
+    return (super.toString()+"\nValor final: "+calcularValorFinal()+"\nEstado de construção: "+estado);
   }
 
   public double getTaxaAdd(){
