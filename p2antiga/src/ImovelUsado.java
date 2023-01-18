@@ -13,11 +13,13 @@ public class ImovelUsado extends Imovel{
 	    this.taxaDesc = taxaDesc;
 	    this.ano = ano;
 	  }
+	  
 	  public double calcularValorFinal(){
-	    return(taxaDesc*super.getPreco());
+	    return(super.getPreco() - taxaDesc);
 	  }
+	  
 	  public String toString(){
-	    return (super.toString()+"\n Valor final: "+calcularValorFinal()+"Ano de construção: "+ano);
+	    return (super.toString()+"\nValor final: "+calcularValorFinal()+"\nAno de construção: "+ano);
 	  }
 	  public double getTaxaDesc(){
 	    return taxaDesc;
