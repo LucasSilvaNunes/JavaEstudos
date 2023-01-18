@@ -1,5 +1,5 @@
 package imoveis;
-public  class Imovel {
+public abstract class Imovel {
   
   private String localizacao;
   private double preco;
@@ -15,6 +15,7 @@ public  class Imovel {
     this.qtdquartos = qtdquartos;
     this.prop = prop;
   }
+  
   public String toString(){
     return("\nLocalizacao:  "+localizacao+"\nPreço: "+preco+"\nQuantidade de quartos: "+qtdquartos+"\nProprietário: "+prop);
   }           
@@ -52,4 +53,4 @@ public  class Imovel {
     this.prop = prop;
   }
   
-}        
+}
